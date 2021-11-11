@@ -6,10 +6,10 @@ The data is sourced from: https://www.hdsb.ca/students/Pages/Health%20and%20Well
 
 ### Documentation Table of Contents:
 - [Privacy](#Privacy)
-- [Getting Started](#Getting%20Started)
-- [API Reference](#API%20Reference)
-- - [`/api/get-data/`](#`/api/get-data/`)
-- - [`/api/get-schools/`](#`/api/get-schools/`)
+- [Getting Started](#getting-started)
+- [API Reference](#api-reference)
+- - [`/api/get-data/`](#apiget-data)
+- - [`/api/get-schools/`](#apiget-schools)
 
 
 

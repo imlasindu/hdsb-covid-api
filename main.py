@@ -7,6 +7,14 @@ app = Flask(__name__)
 # app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 
+# Documentation
+@app.route('/docs/')
+def docs():
+    return redirect('https://github.com/jasonli0616/hdsb-covid-api/tree/main/docs')
+
+
+# API
+
 @app.route('/api/get-data/')
 def api_get_data():
     '''
