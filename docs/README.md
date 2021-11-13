@@ -8,8 +8,8 @@ The data is sourced from: https://www.hdsb.ca/students/Pages/Health%20and%20Well
 - [Privacy](#Privacy)
 - [Getting Started](#getting-started)
 - [API Reference](#api-reference)
-- - [`/api/get-data/`](#apiget-data)
-- - [`/api/get-schools/`](#apiget-schools)
+  - [`/api/get-data/`](#apiget-data)
+  - [`/api/get-schools/`](#apiget-schools)
 
 
 
@@ -45,6 +45,8 @@ Where, in the opinion of the head of the institution, the public interest in dis
 
 ## Getting Started
 
+API URL: http://hdsb-covid-api.herokuapp.com
+
 The API contains two endpoints.
 
 - Get data: `/api/get-data/`
@@ -70,13 +72,21 @@ Gets COVID-19 data of schools
 Query parameters:
 - School: name of school(s)
 
+Returns:
+- Key: school name (string)
+- Value:
+  - `confirmed_staff_cases` (number)
+  - `confirmed_student_cases` (number)
+  - `total_closed_classes` (number)
+  - `school_closed` (boolean)
+
 ```json
 {
-    school_name: {
-        "confirmed_staff_cases": confirmed_staff_cases,
-        "confirmed_student_cases": confirmed_student_cases,
-        "total_closed_classes": total_closed_classes,
-        "school_closed": school_closed
+    "School name": {
+        "confirmed_staff_cases": 0,
+        "confirmed_student_cases": 0,
+        "total_closed_classes": 0,
+        "school_closed": false
     }
 }
 ```
@@ -85,8 +95,11 @@ Query parameters:
 
 Gets all school names
 
+Returns:
+- List of strings
+
 ```json
 [
-    school_name
+    "School name"
 ]
 ```
