@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-def get_data() -> dict[dict]:
+def get_data() -> dict:
     '''
     Sends a GET request to https://www.hdsb.ca/students/Pages/Health%20and%20Well-Being/COVID-19/COVID-19-Advisory.aspx
 
@@ -25,7 +25,7 @@ def get_data() -> dict[dict]:
 
     return _parse_data(table)
 
-def _parse_data(table) -> dict[dict]:
+def _parse_data(table) -> dict:
     '''
     Parses the data that is received in `get_data()`
 
