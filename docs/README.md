@@ -45,7 +45,7 @@ Where, in the opinion of the head of the institution, the public interest in dis
 
 ## Getting Started
 
-API URL: http://hdsb-covid-api.herokuapp.com
+API URL: https://hdsb-covid-api.herokuapp.com
 
 The API contains two endpoints.
 
