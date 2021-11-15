@@ -46,22 +46,19 @@ def _parse_data(table) -> dict:
         for column in row:
             column_num += 1
 
-            if column_num == 1:
-                continue
-
             if column_num == 2:
                 school_name = column.get_text()
 
-            if column_num == 3:
+            elif column_num == 3:
                 confirmed_staff_cases = int(column.get_text())
 
-            if column_num == 4:
+            elif column_num == 4:
                 confirmed_student_cases = int(column.get_text())
 
-            if column_num == 5:
+            elif column_num == 5:
                 total_closed_classes = int(column.get_text())
 
-            if column_num == 6:
+            elif column_num == 6:
                 school_closed = column.get_text().strip() != 'No'
             
         schools[school_name] = {
