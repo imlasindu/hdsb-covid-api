@@ -1,10 +1,8 @@
-from flask import Flask, json, render_template, redirect, url_for, request, session, flash, jsonify
-# import os
+from flask import Flask, redirect, request, jsonify
 from get_data import get_data
 
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 
 # Documentation
