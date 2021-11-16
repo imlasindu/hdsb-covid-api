@@ -48,9 +48,10 @@ Where, in the opinion of the head of the institution, the public interest in dis
 
 API URL: https://hdsb-covid-api.herokuapp.com
 
-The API contains two endpoints.
+The API contains three endpoints.
 
 - Get data: `/api/get-data/`
+- Get data over time: `/api/get-all-data/`
 - Get schools: `/api/get-schools/`
 
 Sending a GET request to the get data endpoint returns a JSON object of the data.\
