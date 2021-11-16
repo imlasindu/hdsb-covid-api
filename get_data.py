@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup as bs
-import datetime
 
 
 def get_data() -> dict:
@@ -24,7 +23,7 @@ def get_data() -> dict:
     soup = bs(response.text, 'html.parser')
     table = soup.find(id='{EF428635-D71E-4F05-9482-A50B7F76241F}-{B2977EDA-1EC3-42C9-987D-AE9A62620C3B}')
 
-    return (_parse_data(table), str(datetime.date.today()))
+    return (_parse_data(table), _get_date())
 
 def _parse_data(table) -> dict:
     '''
@@ -70,3 +69,7 @@ def _parse_data(table) -> dict:
         }
 
     return schools
+
+def _get_date() -> str:
+    response = requests.get('https://worldtimeapi.org/api/timezone/America/Toronto')
+    return response.json()['datetime'].split('T')[0]
