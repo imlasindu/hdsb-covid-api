@@ -9,6 +9,7 @@ The data is sourced from: https://www.hdsb.ca/students/Pages/Health%20and%20Well
 - [Getting Started](#getting-started)
 - [API Reference](#api-reference)
   - [`/api/get-data/`](#apiget-data)
+  - [`/api/get-all-data/`](#apiget-all-data)
   - [`/api/get-schools/`](#apiget-schools)
 
 
@@ -65,14 +66,16 @@ See the [API Reference](#API%20Reference) for more information.
 
 ## API Reference
 
+---
+
 ### `/api/get-data/`
 
 Gets COVID-19 data of schools
 
-Query parameters:
-- School: name of school(s)
+**Query parameters:**
+- **`school` (optional):** name of school(s)
 
-Returns:
+**Returns:**
 - Key: school name (string)
 - Value:
   - `confirmed_staff_cases` (number)
@@ -91,11 +94,47 @@ Returns:
 }
 ```
 
+---
+
+### `/api/get-all-data/`
+
+Gets all data over time, or on specific date
+
+**Query parameters:**
+- **`date` (optional):** date of requested data
+  - Format: `yyyy-mm-dd`
+  - Eg: `2021-11-15`
+
+**Returns:**
+- Key: date (string)
+- Value:
+    - Key: school name (string)
+    - Value:
+        - `confirmed_staff_cases` (number)
+        - `confirmed_student_cases` (number)
+        - `total_closed_classes` (number)
+        - `school_closed` (boolean)
+
+```json
+{
+    "Date": {
+        "School name": {
+            "confirmed_staff_cases": 0,
+            "confirmed_student_cases": 0,
+            "total_closed_classes": 0,
+            "school_closed": false
+        }
+    }
+}
+```
+
+---
+
 ### `/api/get-schools/`
 
 Gets all school names
 
-Returns:
+**Returns:**
 - List of strings
 
 ```json
