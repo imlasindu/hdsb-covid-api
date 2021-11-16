@@ -1,6 +1,5 @@
 from flask import Flask, redirect, request, jsonify
 import threading
-import time
 from get_data import get_data
 import database
 
